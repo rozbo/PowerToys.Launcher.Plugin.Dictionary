@@ -13,9 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Dictionary
+namespace PowerToys.Launcher.Plugin.Dictionary
 {
-    public partial class DictionarySettings : UserControl
+    public partial class DictionarySettings
     {
         private readonly Settings settings;
 

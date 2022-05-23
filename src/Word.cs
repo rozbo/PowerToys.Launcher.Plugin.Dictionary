@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Wox.Plugin;
 
-namespace Dictionary
+namespace PowerToys.Launcher.Plugin.Dictionary
 {
     class Word
     {

@@ -1,12 +1,13 @@
 {
-    "ID":"c3406b5c-22f0-4984-b018-3dae897cab3f",
-    "ActionKeyword":"d",
-    "Name":"Dictionary",
-    "Description":"English dictionary, word correction and synonym.",
-    "Author":"Harry Yu",
-    "Version":"1.0",
-    "Language":"csharp",
-    "Website":"https://github.com/harrynull/WoxDictionary",
-    "IcoPath":"Images\\plugin.png",
-    "ExecuteFileName":"Dictionary.dll"
+  "ID": "5133f325-51f7-44e6-a6a8-a72d9a7f4592",
+  "ActionKeyword": "d",
+  "Name": "Dictionary",
+  "Description": "English dictionary, word correction and synonym.",
+  "Author": "rozbo",
+  "Version": "1.0",
+  "Language": "csharp",
+  "Website": "https://github.com/rozbo/PowerToys.Launcher.Plugin.Dictionary",
+  "IcoPathDark": "Images\\plugin.png",
+  "IcoPathLight": "Images\\plugin.png",
+  "ExecuteFileName": "PowerToys.Launcher.Plugin.Dictionary.dll"
 }

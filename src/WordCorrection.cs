@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dictionary
+namespace PowerToys.Launcher.Plugin.Dictionary
 {
     class WordCorrection
     {

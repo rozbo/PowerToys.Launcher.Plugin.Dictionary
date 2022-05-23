@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+      <OutputType>Library</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Platforms>x64</Platforms>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <useWPF>true</useWPF>
+	 <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+   <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishReadyToRun>true</PublishReadyToRun>
+       <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3">
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite" Version="1.0.115.5" />
+    <PackageReference Include="System.Speech" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PowerToys.Common.UI">
+      <HintPath>..\..\..\..\..\..\Program Files\PowerToys\modules\launcher\PowerToys.Common.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerToys.ManagedCommon">
+      <HintPath>..\..\..\..\..\..\Program Files\PowerToys\modules\launcher\PowerToys.ManagedCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerToys.Settings.UI.Lib">
+      <HintPath>..\..\..\..\..\..\Program Files\PowerToys\modules\launcher\PowerToys.Settings.UI.Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Wox.Infrastructure">
+      <HintPath>..\..\..\..\..\..\Program Files\PowerToys\modules\launcher\Wox.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Wox.Plugin">
+      <HintPath>..\..\..\..\..\..\Program Files\PowerToys\modules\launcher\Wox.Plugin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="images\logo.light.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="images\logo.dark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="plugin.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

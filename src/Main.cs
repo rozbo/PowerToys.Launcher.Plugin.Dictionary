@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.PowerToys.Settings.UI.Library;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -11,11 +12,16 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using Wox.Plugin;
+using Wox.Plugin.Logger;
 
-namespace Dictionary
+namespace PowerToys.Launcher.Plugin.Dictionary
 {
+
     public class Main : IPlugin, ISettingProvider
     {
+        public Main()
+        {
+        }
         private ECDict ecdict;
         private WordCorrection wordCorrection;
         private Synonyms synonyms;
@@ -28,6 +34,12 @@ namespace Dictionary
         private string ActionWord;
         private string QueryWord;
 
+        public string Name => "词典";
+
+        public string Description => "这是一个支持中英词语翻译，自动纠正，近义词查找的词典插件。其大部分功能都支持离线使用。";
+
+        public IEnumerable<PluginAdditionalOption> AdditionalOptions => new List<PluginAdditionalOption>();
+
         public Control CreateSettingPanel()
         {
             return new DictionarySettings(settings);
@@ -35,6 +47,7 @@ namespace Dictionary
 
         public void Init(PluginInitContext context)
         {
+            Log.Info("Dict plugin loaded, try to init",GetType());
             string CurrentPath = context.CurrentPluginMetadata.PluginDirectory;
             string ConfigFile = CurrentPath + "/config/config.json";
             if (File.Exists(ConfigFile))
@@ -44,6 +57,7 @@ namespace Dictionary
             settings.ConfigFile = ConfigFile;
 
             ecdict = new ECDict(CurrentPath + "/dicts/ecdict.db");
+            Log.Info("init ecdict....", GetType());
             wordCorrection = new WordCorrection(CurrentPath + "/dicts/frequency_dictionary_en_82_765.txt", settings.MaxEditDistance);
             synonyms = new Synonyms(settings.BighugelabsToken);
             iciba = new Iciba(settings.ICIBAToken);
@@ -312,6 +326,12 @@ namespace Dictionary
             else if (IsChinese(queryWord))
                 return ChineseQuery(query);
             else return FirstLevelQuery(query); // First-level query
+        }
+
+        public void UpdateSettings(PowerLauncherPluginSettings settings)
+        {
+            //
+            // throw new NotImplementedException();
         }
     }
 }
