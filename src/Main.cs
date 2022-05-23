@@ -332,6 +332,7 @@ namespace PowerToys.Launcher.Plugin.Dictionary
         {
             //
             // throw new NotImplementedException();
+            Log.Info("default....",GetType());
         }
     }
 }
